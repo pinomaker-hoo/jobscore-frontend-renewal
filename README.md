@@ -1,4 +1,4 @@
-# Dice Frontend
+# Jobscroe Frontend Renewal
 
 ### Version
 
