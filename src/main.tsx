@@ -16,14 +16,27 @@ import theme from '@/theme'
 import { GlobalStyles } from '@mui/material'
 import CssBaseline from '@mui/material/CssBaseline'
 
+// ** Other Imports
+import { isMobile } from 'react-device-detect'
+
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
+
+declare global {
+  interface Window {
+    Kakao: any
+  }
+}
 
 root.render(
   <Provider store={store}>
     <ThemeProvider theme={theme}>
       <GlobalStyles styles={{ backgroundColor: 'blue' }} />
       <CssBaseline />
-      <UseLayout children={<App />} />
+      <div className={isMobile ? '' : 'container'}>
+        <div className={isMobile ? '' : 'content'}>
+          <App />
+        </div>
+      </div>
     </ThemeProvider>
   </Provider>,
 )
