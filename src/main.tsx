@@ -7,7 +7,7 @@ import UseLayout from './layouts'
 
 // ** Redux Imports
 import { Provider } from 'react-redux'
-import { store } from '@/store'
+import { store } from './store'
 
 // ** Style Imports
 import '@/style/global.css'

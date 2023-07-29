@@ -11,8 +11,7 @@ import {
   REGISTER,
 } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
-import { api } from '@/services'
-import auth from './app/auth'
+import user from '@/store/app/user'
 
 // ** Middleware Imports
 import { middleware } from './middleware'
@@ -21,10 +20,11 @@ const persistConfig = {
   key: 'root',
   version: 1,
   storage,
-  blacklist: [api.reducerPath],
 }
 
-const reducer = combineReducers({ [api.reducerPath]: api.reducer, auth })
+const reducer = combineReducers({
+  user,
+})
 
 const persistedReducer = persistReducer(persistConfig, reducer)
 
