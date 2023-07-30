@@ -1,8 +1,8 @@
-// ** Next Imports
-import { useRouter } from 'next/router'
-
 // ** React Imports
 import { useCallback, useEffect } from 'react'
+
+// ** Router Imports
+import { useNavigate } from 'react-router-dom'
 
 // ** Mui Imports
 import { Card, Grid, Typography } from '@mui/material'
@@ -24,7 +24,7 @@ import { ResultComapnyType, ScoreType } from '@/types'
 import { companyTypeData } from '@/@fake'
 
 const EndLoadingPage = () => {
-  const router = useRouter()
+  const navigate = useNavigate()
 
   const {
     score: { myCompany, wantCompany },
@@ -49,12 +49,12 @@ const EndLoadingPage = () => {
       }, '')
 
       const arr = companyTypeData.filter(
-        (item: ResultComapnyType) => item.code === code
+        (item: ResultComapnyType) => item.code === code,
       )
 
       return arr.length > 0 ? arr[0].code : '0000'
     },
-    [companyTypeData]
+    [companyTypeData],
   )
 
   const saveApi = () => {
@@ -84,7 +84,7 @@ const EndLoadingPage = () => {
         wantCompany.type4,
     }
     saveResult(saveMyCompany, saveWantCompany, name).then((res) => {
-      router.push('/result')
+      navigate('/result')
     })
   }
 

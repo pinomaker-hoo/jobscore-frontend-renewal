@@ -12,6 +12,7 @@ import SelectPage from './pages/select'
 import SelectWantIntroPage from './pages/selectWant/intro'
 import SelectWantPage from './pages/selectWant'
 import ResultPage from './pages/result'
+import EndLoadingPage from './pages/endLoading'
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
         <Route path="/selectWant/intro" element={<SelectWantIntroPage />} />
         <Route path="/selectWant" element={<SelectWantPage />} />
         <Route path="/result" element={<ResultPage />} />
+        <Route path="/endLoading" element={<EndLoadingPage />} />
       </Routes>
     </BrowserRouter>
   )
