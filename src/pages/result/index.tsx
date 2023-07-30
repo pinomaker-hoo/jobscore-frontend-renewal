@@ -34,11 +34,10 @@ const ResultPage = () => {
     },
   })
 
-  const PATH =
-    process.env.NEXT_PUBLIC_HOST_URL || 'https://jobscore.swygbro.com'
+  const PATH = import.meta.env.VITE_HOST_URL || 'https://jobscore.swygbro.com'
 
   const { myCompany, wantCompany } = useSelector(
-    (state: RootState) => state.user.score
+    (state: RootState) => state.user.score,
   )
 
   const getResultType = (score: ScoreType) => {
@@ -50,7 +49,7 @@ const ResultPage = () => {
     }, '')
 
     const arr = companyTypeData.filter(
-      (item: ResultComapnyType) => item.code === code
+      (item: ResultComapnyType) => item.code === code,
     )
 
     return arr[0]

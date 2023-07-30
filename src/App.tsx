@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import LoginPage from './pages/login'
 import LoadingPage from './pages/loading'
 import CompanyPage from './pages/company'
+import CompanySearch from './pages/company/search'
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <Route path="/" element={<LoginPage />} />
         <Route path="/loading" element={<LoadingPage />} />
         <Route path="/company" element={<CompanyPage />} />
+        <Route path="/company/search" element={<CompanySearch />} />
       </Routes>
     </BrowserRouter>
   )

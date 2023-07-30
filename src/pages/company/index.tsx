@@ -44,10 +44,10 @@ const CompanyPage = () => {
     if (queryParams.get('id')) {
       setCompany({
         id: String(queryParams.get('id')),
-        name: String(queryParams.get('id')),
+        name: String(queryParams.get('name')),
       })
     }
-  }, [])
+  }, [queryParams.get('id')])
 
   return (
     <CompanyPageView

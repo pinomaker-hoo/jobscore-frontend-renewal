@@ -1,6 +1,3 @@
-// ** Next Imports
-import Link from 'next/link'
-
 // ** React Imports
 import { useState } from 'react'
 
@@ -17,6 +14,7 @@ import {
 // ** Other View Imports
 import CompanyModal from '@/components/modal/companyModal'
 import { CompanyType } from '@/types'
+import { Link } from 'react-router-dom'
 
 interface Props {
   word: string
@@ -66,7 +64,7 @@ const CompanySearchView = ({
             </Grid>
             <Grid item xs={9}>
               <Link
-                href={`/company?id=${item.id}&name=${item.name}`}
+                to={`/company?id=${item.id}&name=${item.name}`}
                 style={{ textDecoration: 'none' }}
               >
                 <Typography variant="body1" sx={{ color: 'black' }}>
@@ -97,11 +95,3 @@ const CompanySearchView = ({
 }
 
 export default CompanySearchView
-
-const trash = [
-  { uid: '01231231', name: 'Google' },
-  { uid: '01231232', name: 'Kakao' },
-  { uid: '01231233', name: 'Naver' },
-  { uid: '01231234', name: 'FaceBook' },
-  { uid: '01231235', name: 'amazon' },
-]
