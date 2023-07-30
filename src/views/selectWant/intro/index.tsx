@@ -1,5 +1,5 @@
-// ** Next imports
-import Link from 'next/link'
+// ** Router Imports
+import { Link } from 'react-router-dom'
 
 // ** Mui Imports
 import { Button, Card, Grid, Typography } from '@mui/material'
@@ -58,7 +58,7 @@ const SelectWantIntroPageView = () => {
               </Typography>
             </Grid>
             <Grid item xs={12} sx={{ mt: 5 }}>
-              <Link href="/selectWant">
+              <Link to="/selectWant">
                 <Button
                   size="large"
                   variant="outlined"
