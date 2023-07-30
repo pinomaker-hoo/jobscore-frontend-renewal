@@ -1,6 +1,3 @@
-// ** Next Imports
-import Link from 'next/link'
-
 // ** Mui Imports
 import { Button, Box, Typography } from '@mui/material'
 

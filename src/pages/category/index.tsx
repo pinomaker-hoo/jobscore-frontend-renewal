@@ -1,8 +1,8 @@
-// ** Next Imports
-import { useRouter } from 'next/router'
-
 // ** React Imports
 import { useState } from 'react'
+
+// ** Router Imports
+import { useNavigate } from 'react-router-dom'
 
 // ** Other View Imports
 import CategoryPageView from '@/views/category'
@@ -12,7 +12,7 @@ import { useDispatch } from 'react-redux'
 import { updateDepartment } from '@/store/app/user'
 
 const CategoryPage = () => {
-  const router = useRouter()
+  const navigate = useNavigate()
   const dispatch = useDispatch()
 
   const [department, setDepartment] = useState<string>('')
@@ -23,7 +23,7 @@ const CategoryPage = () => {
 
   const handleNext = () => {
     dispatch(updateDepartment({ department }))
-    router.push('/select/intro')
+    navigate('/select/intro')
   }
 
   return (
