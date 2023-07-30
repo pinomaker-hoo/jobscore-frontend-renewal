@@ -1,8 +1,8 @@
-// ** Next Imports
-import { useRouter } from 'next/router'
-
 // ** React Imports
 import { useState } from 'react'
+
+// ** Router Imports
+import { useNavigate } from 'react-router-dom'
 
 // ** Other Page View
 import SelectPageView from '@/views/select'
@@ -15,7 +15,7 @@ import { useDispatch } from 'react-redux'
 import { updateMyCompanyScore } from '@/store/app/user'
 
 const SelectPage = () => {
-  const router = useRouter()
+  const navigate = useNavigate()
   const dispatch = useDispatch()
 
   const [point, setPoint] = useState<SelectPoint>({
@@ -29,7 +29,7 @@ const SelectPage = () => {
   const handleChange = (type: string, number: number) => {
     if (count === 19) {
       dispatch(updateMyCompanyScore(point))
-      router.push('/selectWant/intro')
+      navigate('/selectWant/intro')
 
       return
     }
