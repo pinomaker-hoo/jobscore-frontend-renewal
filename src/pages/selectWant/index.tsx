@@ -1,5 +1,5 @@
-// ** Next Imports
-import { useRouter } from 'next/router'
+// ** Router Imports
+import { useNavigate } from 'react-router-dom'
 
 // ** React Imports
 import { useState } from 'react'
@@ -15,7 +15,7 @@ import { useDispatch } from 'react-redux'
 import { updateWantCompanyScore } from '@/store/app/user'
 
 const SelectWantPage = () => {
-  const router = useRouter()
+  const navigate = useNavigate()
   const dispatch = useDispatch()
 
   const [point, setPoint] = useState<SelectPoint>({
@@ -29,7 +29,7 @@ const SelectWantPage = () => {
   const handleChange = (type: string, number: number) => {
     if (count === 19) {
       dispatch(updateWantCompanyScore(point))
-      router.push('/endLoading')
+      navigate('/endLoading')
 
       return
     }
