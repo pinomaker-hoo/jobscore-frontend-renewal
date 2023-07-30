@@ -1,15 +1,15 @@
-// ** Next Imports
-import Link from 'next/link'
-
 // ** React Imports
 import { useEffect } from 'react'
+
+// ** Router Imports
+import { Link } from 'react-router-dom'
 
 // ** Mui Imports
 import { Button, Grid, Typography } from '@mui/material'
 
 // ** Lottie Imports
 import Lottie from 'react-lottie'
-import mainLottie from '../lotties/working-person.json'
+import mainLottie from '../../lotties/working-person.json'
 
 // ** Other View Imports
 import WalkingDuck from '@/components/duck/walkingDuck'
@@ -20,7 +20,7 @@ import { RootState } from '@/store'
 import { initialState, initialize } from '@/store/app/user'
 import { useDispatch } from 'react-redux'
 
-const Home = () => {
+const LoginPage = () => {
   const dispatch = useDispatch()
 
   const userState = useSelector((state: RootState) => state.user)
@@ -61,7 +61,7 @@ const Home = () => {
         </Typography>
       </Grid>
       <Grid item xs={12} sx={{ textAlign: 'center' }}>
-        <Link href="/loading">
+        <Link to="/loading">
           <Button
             variant="contained"
             size="large"
@@ -75,4 +75,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default LoginPage
