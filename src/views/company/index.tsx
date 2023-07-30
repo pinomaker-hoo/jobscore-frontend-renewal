@@ -1,8 +1,6 @@
-// ** Next Imports
-import Link from 'next/link'
-
 // ** Mui Imports
 import { Button, Grid, Switch, Typography, TextField } from '@mui/material'
+import { Link } from 'react-router-dom'
 
 interface Props {
   name: string
@@ -34,7 +32,7 @@ const CompanyPageView = ({
         </Typography>
       </Grid>
       <Grid item xs={12} sx={{ textAlign: 'center' }}>
-        <Link href="/company/search">
+        <Link to="/company/search">
           <TextField
             variant="standard"
             sx={{ width: '90%' }}

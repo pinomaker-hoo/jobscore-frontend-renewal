@@ -1,8 +1,8 @@
-// ** Next Imports
-import { useRouter } from 'next/router'
-
 // ** React Imports
 import { useEffect, useState } from 'react'
+
+// ** Router Imports
+import { useNavigate } from 'react-router-dom'
 
 // ** Other View Imports
 import CompanyPageView from '@/views/company'
@@ -12,7 +12,9 @@ import { useDispatch } from 'react-redux'
 import { updateCompany } from '@/store/app/user'
 
 const CompanyPage = () => {
-  const router = useRouter()
+  const queryParams = new URLSearchParams(window.location.search)
+
+  const navigate = useNavigate()
   const dispatch = useDispatch()
 
   const [company, setCompany] = useState<{ name: string; id: string }>({
@@ -35,17 +37,17 @@ const CompanyPage = () => {
   const handleNext = () => {
     dispatch(updateCompany({ ...company, department: '' }))
 
-    router.push('/category')
+    navigate('/category')
   }
 
   useEffect(() => {
-    if (router.query.id) {
+    if (queryParams.get('id')) {
       setCompany({
-        id: String(router.query.id),
-        name: String(router.query.name),
+        id: String(queryParams.get('id')),
+        name: String(queryParams.get('id')),
       })
     }
-  }, [router.query])
+  }, [])
 
   return (
     <CompanyPageView
