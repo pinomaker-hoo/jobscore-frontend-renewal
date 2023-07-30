@@ -1,8 +1,8 @@
-// ** Next Imports
-import Link from 'next/link'
-
 // ** React Imports
 import { useMemo } from 'react'
+
+// ** Router Imports
+import { Link } from 'react-router-dom'
 
 // ** Mui Imports
 import {
@@ -882,7 +882,7 @@ const ResultPageView = ({
             </Card>
           </Grid>
           <Grid item xs={12} sx={{ textAlign: 'center' }}>
-            <Link href="/">
+            <Link to="/">
               <Button
                 variant="contained"
                 sx={{ width: '80%', backgroundColor: '#6176FF' }}
