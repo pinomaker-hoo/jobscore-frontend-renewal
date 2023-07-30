@@ -1,9 +1,8 @@
-// ** Next Imports
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-
 // ** React Imports
 import { useEffect, useState } from 'react'
+
+// ** Router Imports
+import { Link, useNavigate } from 'react-router-dom'
 
 // ** Mui Imports
 import { Button, Grid } from '@mui/material'
@@ -14,7 +13,7 @@ import loadingCity from '../../lotties/loading-city.json'
 import workingDuck from '../../lotties/walking-duck.json'
 
 const LoadingPage = () => {
-  const router = useRouter()
+  const navigate = useNavigate()
 
   const [numDots, setNumDots] = useState<number>(1)
 
@@ -52,7 +51,7 @@ const LoadingPage = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      router.push('/company')
+      navigate('/company')
     }, 3000)
 
     return () => clearInterval(interval)
@@ -68,7 +67,7 @@ const LoadingPage = () => {
         <Lottie options={defaultOptions} height={75} width={75} />
       </Grid>
       <Grid item xs={12} sx={{ textAlign: 'center', mt: -8 }}>
-        <Link href="/company">
+        <Link to="/company">
           <Button variant="contained" size="large" sx={{ width: '80%' }}>
             설문 정보 가져오는 중 {'. '.repeat(numDots)}
           </Button>
