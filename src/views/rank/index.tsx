@@ -1,11 +1,9 @@
-// ** Next Imports
-import Link from 'next/link'
-
 // ** Mui Imports
 import { Card, Grid, Typography, alpha, Button } from '@mui/material'
 
 // ** Other View Imports
 import WalkingDuck from '@/components/duck/walkingDuck'
+import { Link } from 'react-router-dom'
 
 const RankPageView = () => {
   return (
@@ -94,7 +92,7 @@ const RankPageView = () => {
             </Grid>
           ))}
           <Grid item xs={12} sx={{ textAlign: 'center' }}>
-            <Link href="/">
+            <Link to="/">
               <Button
                 variant="contained"
                 sx={{ width: '80%', backgroundColor: '#6176FF' }}
@@ -108,7 +106,7 @@ const RankPageView = () => {
             </Link>
           </Grid>
           <Grid item xs={12} sx={{ textAlign: 'center', my: -1 }}>
-            <Link href="/rank">
+            <Link to="/rank">
               <Button
                 variant="contained"
                 sx={{ width: '80%', backgroundColor: '#6176FF' }}
