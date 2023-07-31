@@ -1150,10 +1150,10 @@ export const companyTypeData: ResultComapnyType[] = [
   },
   {
     id: 8,
-    code: '0000',
-    title: '시한폭탄',
-    text: '언제 터질지 몰라요. 보글보글 보글보글',
-    img: '/type/0000.png',
+    code: '0011',
+    title: '돈과 미래 추구형',
+    text: '좋은 복지와 비전이 있으니 업무 강도를 줄일 방법을 찾아봐요!',
+    img: '/type/0011.png',
   },
   {
     id: 9,
