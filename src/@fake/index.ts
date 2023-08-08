@@ -160,7 +160,7 @@ export const questionData1: Question[] = [
       },
       {
         id: 22,
-        text: '재택 근무를 포함하는 방식이 이에요.',
+        text: '재택 근무를 포함하는 방식이에요.',
         point: 15,
       },
       {
